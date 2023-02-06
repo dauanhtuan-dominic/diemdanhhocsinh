@@ -1,0 +1,94 @@
+:host ::ng-deep .btn{
+    font-size: 11px!important;
+    font-family: "DM Sans";
+    color: white;
+}
+:host ::ng-deep .card{
+    border: none;
+  
+}
+:host ::ng-deep .btn-create{
+    background-color: #0C9400!important;
+    position: relative;
+    font-size: 18px;
+    
+    
+    &::before{
+        content:"" ;
+        
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+        // background-color: white;
+        width: 10px;
+        height: 10px;
+        left: 1vw;
+        bottom: 0;
+        transform: translateY(-100%);
+    }
+  }
+  :host ::ng-deep .btn-down{
+    position: relative;
+    &::before{
+        content:"" ;
+        
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+        // background-color: white;
+        width: 15px;
+        height: 15px;
+        left: 1vw;
+        bottom: 0;
+        transform: translateY(-30%);
+    }
+  }
+  :host ::ng-deep .btn-import{
+    position: relative;
+    
+    // transform: translateX(1);
+    &::before{
+        content:"" ;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+        background-color: #FFC700;
+        width: 15px;
+        height: 15px;
+        left: 1vw;
+        bottom: 0;
+        transform: translateY(-30%);
+        border: none;
+    }
+  }
+  html,body{
+    font-family: "roboto-condensed", "DM Sans";
+  }
+  :host ::ng-deep .mat-body, .mat-body-1, .mat-typography{
+    font-family: "DM Sans"!important;
+  }
+  :host ::ng-deep .card-form{
+    border: 2px solid #999999;
+    box-sizing: border-box;
+  }
+  :host ::ng-deep .form-search{
+    background: #F0F0F0;
+  border-radius: 5px;
+  border:none;
+  padding: 3px 0;
+  font-size: 13px;
+  }
+  :host ::ng-deep .btn-control{
+    color: black!important;
+  }
+  :host ::ng-deep datatable-body-cell{
+    display: flex!important;
+    justify-content: left!important;
+  ;
+  }
+  .backdrop{
+    height: 1000px!important;
+  }

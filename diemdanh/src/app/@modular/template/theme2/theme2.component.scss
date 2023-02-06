@@ -1,0 +1,46 @@
+.page-warp {
+    display         : flex;
+    background-color: #f7f7f8;
+
+    .pages-left {
+        transition: width 0.3s;
+        position: fixed;
+    }
+    .background-slide {
+        height: 100vh;
+        background-color: #ec2024;
+    }
+    
+
+    .page-right {
+        right: 0px;
+        position: absolute;
+        transition: width 0.3s;
+        .content {
+            background-color: thistle;
+            margin          : 140px 40px 40px 40px;
+            background-clip : border-box;
+            border          : 1px solid rgba(0, 0, 0, .125);
+            border-radius   : 5px;
+            background-color: #fff;
+        }
+
+        .copyright {
+            position: fixed;
+            bottom  : 0px;
+            left    : 49vw;
+            opacity: 0.6;
+        }
+    }
+}
+
+.background-slide {
+    width: 300px;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    background                 : -moz-linear-gradient(0deg, #BBD2C5 0%, #536976 50%, #292E49 100%);
+    background                 : -webkit-linear-gradient(0deg, #BBD2C5 0%, #536976 50%, #292E49 100%);
+    background                 : linear-gradient(0deg, #BBD2C5 0%, #536976 50%, #292E49 100%);
+}

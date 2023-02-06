@@ -1,1 +1,17 @@
-<p>nav-top works!</p>
+<div id="navTop" class="nav-warpper">
+    <div class="left">
+        <div class="status-sidebar">
+            <i *ngIf="status == 'extend-sidebar'" class="icon-button fa fa-bars" aria-hidden="true" (click)="animationSidebar('less-sidebar')"></i>
+            <i *ngIf="status == 'less-sidebar'" class="icon-button fa fa-ellipsis-v" aria-hidden="true" (click)="animationSidebar('extend-sidebar')"></i>
+        </div>
+        <div class="header-page">
+            <span>{{this.titlePage}}</span>
+        </div>
+    </div>
+    <div class="middle">
+
+    </div>
+    <div class="right">
+        <i class="icon-button fa fa-sign-out" aria-hidden="true" ></i>
+    </div>
+</div>

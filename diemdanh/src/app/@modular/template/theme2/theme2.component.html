@@ -1,1 +1,15 @@
-<p>theme2 works!</p>
+<div class="page-warp">
+    <div #mySidenav id="mySidenav" class="pages-left">
+        <app-sidebar-left></app-sidebar-left>
+        <!-- <div class="background-slide"></div> -->
+    </div>
+    
+    <div id="main" class="page-right">
+        
+        <app-nav-top></app-nav-top>
+        <div class="content">
+          <router-outlet></router-outlet>
+        </div>
+        <span class="copyright">Bản quyền thuộc về Light Coding - Trung tâm đào tạo Lập Trình ở Huyện Đăkmil</span>
+    </div>
+</div>

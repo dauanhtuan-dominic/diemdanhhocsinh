@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { MENU_ITEM } from 'src/app/pages/menu';
+import { MENU_ITEM } from '../../../../../pages/menu';
 import { Theme2Service } from '../../theme2.service';
 
 @Component({
@@ -28,33 +28,34 @@ export class SidebarLeftComponent implements OnInit {
   ngAfterViewInit() {
 }
 
-routerLink(index, item) {
-  if(this.menuItem[index]['active'] == true)
-  {
-    return;
-  }
-  this.menuItem[index]['active'] = true;
-  if(this.historyActive === -1) {
-    this.historyActive = index;
-  } else {
-    this.menuItem[this.historyActive]['active'] = false;
-    this.historyActive = index;
-  }
+routerLink(index:any, item:any) {
+  // if(this.menuItem[index]['active'] == true)
+  // {
+  //   return;
+  // }
+  // this.menuItem[index]['active'] = true;
+  // if(this.historyActive === -1) {
+  //   this.historyActive = index;
+  // } else {
+  //   this.menuItem[this.historyActive]['active'] = false;
+  //   this.historyActive = index;
+  // }
   this.router.navigate(['/pages/', item.path]);
+  
   this.theme1Service.setTitleMenuCurrent(item.title);
 }
 
-  actionSidebar(status) {
+  actionSidebar(status:any) {
     if(status === 'less-sidebar') {
-      document.getElementById("sidebar").style.width = '100px';
+      // document.getElementById("sidebar").style.width = '100px';
     } else {
-      document.getElementById("sidebar").style.width = '270px';
+      // document.getElementById("sidebar").style.width = '270px';
     }
   }
   ngOnDestroy() {
     if(this.historyActive == -1)
     return;
-    this.menuItem[this.historyActive]['active'] = false;
+    // this.menuItem[this.historyActive]['active'] = false;
   }
 
 }

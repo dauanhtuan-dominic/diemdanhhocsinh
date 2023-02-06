@@ -9,7 +9,7 @@ const routes: Routes = [
     component: PagesComponent,
     children: [
       {
-        path: 'student',
+        path: 'students',
         loadChildren: () => import('./student/student.module')
           .then(m => m.StudentModule),
       },
