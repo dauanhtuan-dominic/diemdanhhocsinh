@@ -19,14 +19,17 @@
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",
     "@ng-select/ng-select": "^10.0.3",
+    "@reactivex/rxjs": "^6.6.7",
     "@swimlane/ngx-datatable": "^20.1.0",
     "ckeditor4-angular": "^3.2.1",
     "ngx-bootstrap": "^2.0.5",
-    "ngx-bootstrap-modal": "^2.0.1",
+    "ngx-bootstrap-modal": "^1.1.0",
     "ngx-currency": "^3.0.0",
     "ngx-currency-2": "^1.0.2",
     "ngx-img-cropper": "^14.0.1",
-    "rxjs": "~7.8.0",
+    "rxjs": "^7.8.0",
+    "rxjs-compat": "^6.6.7",
+    "rxjs-es": "^5.0.0-beta.12",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
@@ -43,4 +46,5 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.9.4"
   }
+  
 }

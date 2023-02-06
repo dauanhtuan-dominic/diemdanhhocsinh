@@ -7,7 +7,13 @@ const routes: Routes = [
   {
     path: '',
     component: PagesComponent,
-
+    children: [
+      {
+        path: 'student',
+        loadChildren: () => import('./student/student.module')
+          .then(m => m.StudentModule),
+      },
+    ]
   }
   
 ]

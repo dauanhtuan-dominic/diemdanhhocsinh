@@ -12,9 +12,7 @@ const routes: Routes = [
   { path: '**', redirectTo: 'pages' },
 ]
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,0 +1,27 @@
+<div class="sidebar-wrapper" #sidebar id="sidebar" >
+    <div class="top-side"></div>
+    <div class="logo-trademark">
+        <div class="img-logo">
+        <a style="color: white; font-size: 20px;">logo giáo xứ</a>
+        </div>
+        <!-- <div class="trademark" [ngClass]="{'show-text': statusSidebar == 'extend-sidebar', 'hide-text': statusSidebar == 'less-sidebar'}">
+            <span>Lavashin</span>
+        </div> -->
+    </div>
+    <div class="user">
+        <div class="photo">
+            <img src="assets/images/icon-admin.svg" />
+        </div>
+        <div class="info" [ngClass]="{'show-text': statusSidebar == 'extend-sidebar', 'hide-text': statusSidebar == 'less-sidebar'}">
+            <span>admin</span>
+        </div>
+    </div>
+    <ul>
+        <li *ngFor="let item of menuItem; let i = index" (click)="routerLink(i, item)" [ngClass]="{'active-menu': item.active === true}">
+            <div class="ground-menu-item" >
+                <i class="fa fa-{{item.icon}}" aria-hidden="true"></i>
+            <span [ngClass]="{'show-text': statusSidebar == 'extend-sidebar', 'hide-text': statusSidebar == 'less-sidebar'}">{{item.title}}</span>
+            </div>
+        </li>
+    </ul>
+</div>

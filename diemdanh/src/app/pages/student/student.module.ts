@@ -19,9 +19,9 @@ import { NgxCurrencyModule } from "ngx-currency";
       FormsModule,
       NgSelectModule,
       ImageCropperModule,
-      ModalModule.forRoot(),
+      // ModalModule.forRoot(),
       NgxCurrencyModule,
    
     ]
   })
-  export class ProductsModule { }
+  export class StudentModule { }
