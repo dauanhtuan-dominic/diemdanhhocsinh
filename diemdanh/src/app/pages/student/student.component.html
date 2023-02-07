@@ -17,8 +17,8 @@
         <th>Cha hoặc Mẹ</th>
         <th>Giáo xóm</th>
       </tr>
-      <tr *ngFor ="let data of tableData " >
-        <td></td>
+      <tr *ngFor ="let data of tableData; index as i " >
+        <td>{{i+1}}</td>
         <img src="{{data.image}}"/>
         <td>{{data.namegod}}</td>
         <td>{{data.fullname}}</td>

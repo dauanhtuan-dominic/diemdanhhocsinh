@@ -23,7 +23,10 @@ import { CoreModule } from 'src/app/@web-core';
       ImageCropperModule,
       // ModalModule.forRoot(),
       NgxCurrencyModule,
-      CoreModule
+      CoreModule,
+      FormsModule,
+      ReactiveFormsModule
+      
     ]
   })
   export class StudentModule { }

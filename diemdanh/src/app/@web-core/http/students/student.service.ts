@@ -17,4 +17,11 @@ export class StudentService  {
             }),
             catchError((error)=> { throw error.error}));
     }
+    public create(payload: any) {
+        return this.http.post<any>(`${APICONFIG.STUDENTS.INSERT}`, payload).pipe(
+          map((result) => {
+            return result;
+          }),
+          catchError((errorRes) => { throw errorRes.error; }));
+      }
 }

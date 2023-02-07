@@ -1,1 +1,67 @@
-<p>student-detail works!</p>
+<div class="modal-header">
+    <h4 *ngIf="!this.id" class="modal-title" style="font-size: 27px;">Thêm học sinh</h4>
+    <h4 *ngIf="this.id" class="modal-title">Chi tiết học sinh</h4>
+</div>
+<div class="modal-body">
+    <form [formGroup]="form">
+        <div class="form-group">
+            <label for="usr">Hình ảnh học viên:</label> <br/>
+            <input type="file" (change)="uploadFile($event)">
+            <img style=" padding-top: 22px;" src="{{imgAvatar}}"/>
+        </div>
+        <div class="form-group">
+            <label for="usr">Tên thánh:</label>
+            <input type="text" formControlName="namegod" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="usr">Họ và Tên:</label>
+            <input type="text" formControlName="fullname" class="form-control">
+        </div>
+
+        <div class="form-group date">
+            <label for="usr">Ngày sinh:</label>
+            <input style="height: 35px;
+            width: 100%;
+            padding-left: 16px;
+            font-size: 19px;" formControlName="birthday" type="date">
+        </div>
+
+        <div class="form-group">
+            <label for="usr">Lớp học:</label>
+            <select  style="height: 35px;
+            width: 100%;
+            padding-left: 16px;
+            font-size: 19px;" formControlName="Classes">
+                <option [ngValue]="null" disabled>Chọn lớp học</option>
+                <option *ngFor="let class of Classes" [ngValue]="class.name">{{class.name}}</option>
+            </select>        
+        </div>
+
+        <div class="form-group">
+            <label for="usr">Giáo xóm:</label>
+            <select  style="height: 35px;
+            width: 100%; 
+            padding-left: 16px;
+            font-size: 19px;" formControlName="groupgod">
+                <option [ngValue]="null" disabled>Chọn giáo xóm</option>
+                <option *ngFor="let groupgo of groupgod" [ngValue]="groupgo.name">{{groupgo.name}}</option>
+            </select>        
+        </div>
+
+        <div class="form-group">
+            <label for="usr">Họ tên Cha Hoặc Mẹ:</label>
+            <input type="text" formControlName="parent" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="usr">Địa chỉ:</label>
+            <input type="text" formControlName="address" class="form-control">
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn-cancel" (click)="cancel()">Hủy</button>
+    <button *ngIf="!this.id" type="button" class="btn btn-primary btn-control" [disabled]="!form.valid"
+        (click)="createItem()">Thêm</button>
+</div>
