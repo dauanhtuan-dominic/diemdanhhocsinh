@@ -1,0 +1,38 @@
+
+  .top{
+    display: flex;
+    justify-content: space-between;
+    input {
+        width: 60%;
+        padding: 8px 2px;
+      }
+    button{
+        background-color: green;
+        border: 1px solid white;
+        color: white;
+        border-radius: 4px;
+        padding: 0 15px;
+    }
+  }
+  table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    margin-top: 16px;
+    }
+    
+    th {
+        background-color: floralwhite;
+        border: 2px solid blanchedalmond;
+    }
+    td {
+      border: 2px solid blanchedalmond;
+    }
+    td, th {
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }

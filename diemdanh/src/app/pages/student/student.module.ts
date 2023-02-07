@@ -9,6 +9,8 @@ import { StudentDetailComponent} from './student-detail/student-detail.component
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ImageCropperComponent, CropperSettings, ImageCropperModule } from 'ngx-img-cropper';
 import { NgxCurrencyModule } from "ngx-currency";
+import { StudentService } from 'src/app/@web-core/http';
+import { CoreModule } from 'src/app/@web-core';
 
 @NgModule({
     declarations: [StudentComponent, StudentDetailComponent],
@@ -21,7 +23,7 @@ import { NgxCurrencyModule } from "ngx-currency";
       ImageCropperModule,
       // ModalModule.forRoot(),
       NgxCurrencyModule,
-   
+      CoreModule
     ]
   })
   export class StudentModule { }

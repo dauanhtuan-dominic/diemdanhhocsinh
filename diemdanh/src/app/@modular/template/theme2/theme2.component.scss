@@ -1,7 +1,6 @@
 .page-warp {
     display         : flex;
     background-color: #f7f7f8;
-
     .pages-left {
         transition: width 0.3s;
         position: fixed;
@@ -16,6 +15,8 @@
         right: 0px;
         position: absolute;
         transition: width 0.3s;
+        width: 87%;
+
         .content {
             background-color: thistle;
             margin          : 140px 40px 40px 40px;
