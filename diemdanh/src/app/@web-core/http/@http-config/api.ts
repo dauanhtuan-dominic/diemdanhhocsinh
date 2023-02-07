@@ -6,7 +6,7 @@ export const API_URL = new InjectionToken<string>('apiUrl');
 export const APICONFIG = {
     BASEPOINT: environment.baseUrl,
     STUDENTS: {
-        GET: `http://dieuhau.top/api/get.php`,
-        INSERT: `http://dieuhau.top/api/insert.php`
+        GET: `https://dieuhau.top/api/get.php`,
+        INSERT: `https://dieuhau.top/api/insert.php`
     }
 }
