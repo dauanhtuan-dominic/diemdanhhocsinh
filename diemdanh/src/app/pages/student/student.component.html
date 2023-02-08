@@ -1,11 +1,12 @@
 <div style="margin: 30px">
-    <div class="top">
-        <input
-        type="text"
-        placeholder="Tìm kiếm"
-      />
-      <button type="button" (click)="create()">Thêm mới +</button>
+  <form class="wrap">
+    <div class="search">
+      <input class="searchTerm" type="text" name="searchTerm" 
+        placeholder="Tìm kiếm học sinh"
+        [(ngModel)]="searchTerm" (input)="search(searchTerm)" />
     </div>
+    <button type="button" (click)="create()">Thêm mới +</button>
+  </form>
     <table>
       <tr>
         <th>STT</th>

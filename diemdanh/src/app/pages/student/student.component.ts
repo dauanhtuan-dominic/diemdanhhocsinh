@@ -11,7 +11,9 @@ import { StudentService } from 'src/app/@web-core/http/students/student.service'
   styleUrls: ['./student.component.scss']
 })
 export class StudentComponent  implements OnInit{
+  filterTerm!: string;
   tableData: any[];
+  searchTerm = '';
   public index: number = 0;
   messages = {
     emptyMessage: 'No data to display'
@@ -31,5 +33,8 @@ export class StudentComponent  implements OnInit{
     console.log('vào');
     
     this.router.navigate(['pages/students/create']);
+  }
+  search(value: string): void {
+    
   }
 }

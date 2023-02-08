@@ -11,7 +11,7 @@ import { ImageCropperComponent, CropperSettings, ImageCropperModule } from 'ngx-
 import { NgxCurrencyModule } from "ngx-currency";
 import { StudentService } from 'src/app/@web-core/http';
 import { CoreModule } from 'src/app/@web-core';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
     declarations: [StudentComponent, StudentDetailComponent],
     imports: [
@@ -25,7 +25,8 @@ import { CoreModule } from 'src/app/@web-core';
       NgxCurrencyModule,
       CoreModule,
       FormsModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      Ng2SearchPipeModule
       
     ]
   })

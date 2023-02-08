@@ -1,18 +1,44 @@
-
-  .top{
+  .wrap{
     display: flex;
     justify-content: space-between;
+    
     input {
-        width: 60%;
-        padding: 8px 2px;
-      }
-    button{
-        background-color: green;
-        border: 1px solid white;
-        color: white;
-        border-radius: 4px;
-        padding: 0 15px;
+      width: 60%;
+      padding: 8px 2px;
     }
+    button{
+      background-color: green;
+      border: 1px solid white;
+      color: white;
+      border-radius: 4px;
+      padding: 0 15px;
+    }
+    .search {
+      width: 50%;
+      position: relative;
+      display: flex;
+    }
+    
+    .searchTerm {
+      width: 100%;
+      border: 3px solid #00B4CC;
+      padding: 5px;
+      height: 20px;
+      border-radius: 5px;
+      outline: none;
+      color: #9DBFAF;
+    }
+    
+    .searchTerm:focus {
+      color: #00B4CC;
+    }
+    p{
+        color: #383c52;
+    }
+  }
+  .top{
+
+ 
   }
   table {
       font-family: arial, sans-serif;
