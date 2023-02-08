@@ -9,7 +9,10 @@ import { MENU_ITEM } from './menu';
 export class PagesComponent implements OnInit {
 
   public MENU = MENU_ITEM;
-  constructor() { }
+  
+  constructor() { 
+    
+  }
 
   ngOnInit(): void {
   }

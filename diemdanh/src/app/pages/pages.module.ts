@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { PagesComponent } from './pages.component';
 import { PagesRoutingModule} from './pages-routing.module';
 import {  Theme2Module  } from '../@modular/template/theme2/theme2.module';
@@ -8,8 +8,8 @@ import {  Theme2Module  } from '../@modular/template/theme2/theme2.module';
      imports: [
          CommonModule,
          PagesRoutingModule,
-         Theme2Module
-         
-     ]
+         Theme2Module,
+     ],
+     providers: [DatePipe]
  })
  export class PagesModule{}

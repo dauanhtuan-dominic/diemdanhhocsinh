@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
@@ -26,7 +26,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
       CoreModule,
       FormsModule,
       ReactiveFormsModule,
-      Ng2SearchPipeModule
+      Ng2SearchPipeModule,
+      DatePipe
       
     ]
   })

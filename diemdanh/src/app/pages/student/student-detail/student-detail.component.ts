@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgSelectConfig } from '@ng-select/ng-select';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StudentService } from 'src/app/@web-core/http';
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-student-detail',
   templateUrl: './student-detail.component.html',
@@ -46,6 +47,7 @@ export class StudentDetailComponent {
   }
   ngOnInit(): void {
         this.addForm();
+        
   }
   addForm() {
     this.form = this.fb.group({
