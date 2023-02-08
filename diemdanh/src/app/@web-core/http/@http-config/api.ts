@@ -7,6 +7,7 @@ export const APICONFIG = {
     BASEPOINT: environment.baseUrl,
     STUDENTS: {
         GET: `https://dieuhau.top/api/get.php`,
-        INSERT: `https://dieuhau.top/api/insert.php`
+        INSERT: `https://dieuhau.top/api/insert.php`,
+        DELETE: (id:any) =>`https://dieuhau.top/api/delete.php?id=${id}`
     }
 }

@@ -24,4 +24,11 @@ export class StudentService  {
           }),
           catchError((errorRes) => { throw errorRes.error; }));
       }
+      public delete(id:any){
+        return this.http.delete(`${APICONFIG.STUDENTS.DELETE(id)}`).pipe(map((result)=>{
+          return result;
+        }),catchError((erros: any)=>{
+          throw erros.error;
+        }))
+      }
 }

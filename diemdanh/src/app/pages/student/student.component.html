@@ -27,7 +27,7 @@
         <td>{{data.parent}}</td>
         <td>{{data.groupgod}}</td>
         <td class="delete">
-          <img src="assets/rubbish.png"/>
+          <img (click)="deleteStudent(data.id)" src="assets/rubbish.png"/>
         </td>
       </tr>
     </table>

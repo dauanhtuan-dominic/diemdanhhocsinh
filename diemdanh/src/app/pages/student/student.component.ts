@@ -14,6 +14,7 @@ export class StudentComponent  implements OnInit{
   filterTerm!: string;
   tableData: any[];
   searchTerm = '';
+  idStudent: any;
   public index: number = 0;
   messages = {
     emptyMessage: 'No data to display'
@@ -25,6 +26,9 @@ export class StudentComponent  implements OnInit{
 
   }
   ngOnInit(): void {
+    this.getlistdatas();
+  }
+  getlistdatas(){
     this.studentservice.getListData().subscribe((data:any) =>{
       this.tableData = data.result;
     })
@@ -36,5 +40,11 @@ export class StudentComponent  implements OnInit{
   }
   search(value: string): void {
     
+  }
+  deleteStudent(id:any){
+    console.log('id',id);
+    this.studentservice.delete(id).subscribe((data:any)=>{
+      this.getlistdatas();
+    })
   }
 }
