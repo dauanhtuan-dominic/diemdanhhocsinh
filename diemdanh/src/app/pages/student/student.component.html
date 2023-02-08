@@ -17,6 +17,7 @@
         <th>Lớp</th>
         <th>Cha hoặc Mẹ</th>
         <th>Giáo xóm</th>
+        <th>Hành động</th>
       </tr>
       <tr *ngFor ="let data of tableData; index as i " >
         <td>{{i+1}}</td>
@@ -27,6 +28,9 @@
         <td>{{data.class}}</td>
         <td>{{data.parent}}</td>
         <td>{{data.groupgod}}</td>
+        <td class="delete">
+          <img src="assets/rubbish.png"/>
+        </td>
       </tr>
     </table>
   </div>
