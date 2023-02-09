@@ -14,7 +14,10 @@
         <th>Họ và tên</th>
         <th>Ngày sinh</th>
         <th>Lớp</th>
-        <th>Cha hoặc Mẹ</th>
+        <th>Tên thánh Cha</th>
+        <th>Họ tên Cha</th>
+        <th>Tên thánh Mẹ</th>
+        <th>Họ tên Mẹ</th>
         <th>Giáo xóm</th>
         <th>Hành động</th>
       </tr>
@@ -24,10 +27,13 @@
         <td>{{data.fullname}}</td>
         <td>{{data.birthday | date: 'dd/MM/yyyy'}}</td>
         <td>{{data.class}}</td>
-        <td>{{data.parent}}</td>
+        <td>{{data.godfather}}</td>
+        <td>{{data.fathername}}</td>
+        <td>{{data.godmother}}</td>
+        <td>{{data.mothername}}</td>
         <td>{{data.groupgod}}</td>
         <td class="delete">
-          <img (click)="deleteStudent(data.id)" src="assets/rubbish.png"/>
+          <img (click)="openModal(data.id)" src="assets/rubbish.png"/>
         </td>
       </tr>
     </table>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MENU_ITEM } from './menu';
-
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
@@ -9,7 +8,7 @@ import { MENU_ITEM } from './menu';
 export class PagesComponent implements OnInit {
 
   public MENU = MENU_ITEM;
-  
+
   constructor() { 
     
   }

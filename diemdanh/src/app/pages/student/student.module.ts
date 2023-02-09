@@ -12,6 +12,7 @@ import { NgxCurrencyModule } from "ngx-currency";
 import { StudentService } from 'src/app/@web-core/http';
 import { CoreModule } from 'src/app/@web-core';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @NgModule({
     declarations: [StudentComponent, StudentDetailComponent],
     imports: [
@@ -21,14 +22,13 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
       FormsModule,
       NgSelectModule,
       ImageCropperModule,
-      // ModalModule.forRoot(),
+      // ModalModule.forRoot(),z
       NgxCurrencyModule,
       CoreModule,
       FormsModule,
       ReactiveFormsModule,
       Ng2SearchPipeModule,
-      DatePipe
-      
+      DatePipe,
     ]
   })
   export class StudentModule { }

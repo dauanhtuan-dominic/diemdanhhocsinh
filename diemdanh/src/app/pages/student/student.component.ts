@@ -5,6 +5,9 @@ import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { StudentService } from 'src/app/@web-core/http/students/student.service';
+import { ModalComponent } from '../modal/modal.component';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',
@@ -19,9 +22,12 @@ export class StudentComponent  implements OnInit{
   messages = {
     emptyMessage: 'No data to display'
   };
+  modalRef: MdbModalRef<ModalComponent> | null = null;
+
   constructor(
     private studentservice: StudentService,
-    private router: Router
+    private router: Router,
+    private modalService: MdbModalService
   ){
 
   }
@@ -33,6 +39,16 @@ export class StudentComponent  implements OnInit{
       this.tableData = data.result;
     })
   }
+  openModal(id:any) {
+    this.modalRef = this.modalService.open(ModalComponent,{
+      data: { idStudent: id },
+      modalClass: 'modal-dialog-top'
+    });
+    // this.studentservice.delete(id).subscribe((data:any)=>{
+    //   this.getlistdatas();
+    // })
+    
+  }
   create(){
     console.log('vào');
     
@@ -41,10 +57,5 @@ export class StudentComponent  implements OnInit{
   search(value: string): void {
     
   }
-  deleteStudent(id:any){
-    console.log('id',id);
-    this.studentservice.delete(id).subscribe((data:any)=>{
-      this.getlistdatas();
-    })
-  }
+
 }

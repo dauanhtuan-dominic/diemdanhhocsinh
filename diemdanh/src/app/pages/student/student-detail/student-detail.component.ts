@@ -57,6 +57,10 @@ export class StudentDetailComponent {
       Classes: [''],
       groupgod: [''],
       birthday: [''],
+      godfather: [''],
+      fathername: [''],
+      godmother: [''],
+      mothername: [''],
       parent: [''],
       address: ['']
     });
@@ -85,7 +89,10 @@ export class StudentDetailComponent {
     formData.append('class', this.form.get('Classes')?.value);  
     formData.append('groupgod', this.form.get('groupgod')?.value);  
     formData.append('birthday', this.form.get('birthday')?.value);  
-    formData.append('parent', this.form.get('parent')?.value);  
+    formData.append('godfather', this.form.get('godfather')?.value);  
+    formData.append('fathername', this.form.get('fathername')?.value);  
+    formData.append('godmother', this.form.get('godmother')?.value);  
+    formData.append('mothername', this.form.get('mothername')?.value);  
     formData.append('address', this.form.get('address')?.value);  
     this.studentservice.create(formData).subscribe(data=>{
       if(data.success == false){
