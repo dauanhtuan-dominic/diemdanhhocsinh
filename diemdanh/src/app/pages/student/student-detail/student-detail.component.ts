@@ -94,6 +94,8 @@ export class StudentDetailComponent {
     formData.append('godmother', this.form.get('godmother')?.value);  
     formData.append('mothername', this.form.get('mothername')?.value);  
     formData.append('address', this.form.get('address')?.value);  
+    console.log('form',formData);
+    
     this.studentservice.create(formData).subscribe(data=>{
       if(data.success == false){
         console.log(' thêm thất bại');

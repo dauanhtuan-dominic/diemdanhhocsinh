@@ -37,6 +37,8 @@ export class StudentComponent  implements OnInit{
   getlistdatas(){
     this.studentservice.getListData().subscribe((data:any) =>{
       this.tableData = data.result;
+      console.log('d',this.tableData);
+      
     })
   }
   openModal(id:any) {
