@@ -33,7 +33,8 @@
         <td>{{data.mothername}}</td>
         <td>{{data.groupgod}}</td>
         <td class="delete">
-          <img (click)="openModal(data.id)" src="assets/rubbish.png"/>
+          <img  style="margin-right: 11px;" src="assets/edit.png"/>
+          <img (click)="delete(data.id)" src="assets/rubbish.png"/>
         </td>
       </tr>
     </table>

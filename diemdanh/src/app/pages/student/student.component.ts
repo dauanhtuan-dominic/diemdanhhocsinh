@@ -42,14 +42,19 @@ export class StudentComponent  implements OnInit{
     })
   }
   openModal(id:any) {
-    this.modalRef = this.modalService.open(ModalComponent,{
-      data: { idStudent: id },
-      modalClass: 'modal-dialog-top'
-    });
+    // this.modalRef = this.modalService.open(ModalComponent,{
+    //   data: { idStudent: id },
+    //   modalClass: 'modal-dialog-top'
+    // });
     // this.studentservice.delete(id).subscribe((data:any)=>{
     //   this.getlistdatas();
     // })
     
+  }
+  delete(id:any){
+    this.studentservice.delete(id).subscribe((data)=>{
+      this.getlistdatas();
+    })
   }
   create(){
     console.log('vào');
