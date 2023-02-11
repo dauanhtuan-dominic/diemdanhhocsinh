@@ -32,6 +32,7 @@
             bottom  : 0px;
             left    : 49vw;
             opacity: 0.6;
+            font-style: oblique;
         }
     }
 }
@@ -52,8 +53,9 @@
             width: 102%;
             display: flex;
             .copyright {
+                text-align: center;
                 position: fixed;
-                bottom  : 0px;
+                bottom  : -4px;
                 left    : 10vw;
                 opacity: 0.6;
             }
