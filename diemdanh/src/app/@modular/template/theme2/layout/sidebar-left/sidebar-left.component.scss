@@ -201,7 +201,14 @@
 
 @media screen and (min-height: 769px) {
     .sidebar-wrapper {
-        height: 100vh;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .sidebar-wrapper {
+        height: 100%;
+        background:none;
     }
 }
 .type-2 {

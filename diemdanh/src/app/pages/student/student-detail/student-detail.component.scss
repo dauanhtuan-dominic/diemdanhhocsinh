@@ -46,3 +46,12 @@
         margin: 10px;
     }
 }
+@media screen and (max-width: 500px) {
+  .modal-body{
+    .form-group{
+      input{
+        width: 100%;
+      }
+    }
+  }
+}

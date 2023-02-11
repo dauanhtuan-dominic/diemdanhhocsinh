@@ -18,6 +18,7 @@
         width: 87%;
 
         .content {
+            width: 90%;
             background-color: thistle;
             margin          : 140px 40px 40px 40px;
             background-clip : border-box;
@@ -44,4 +45,18 @@
     background                 : -moz-linear-gradient(0deg, #BBD2C5 0%, #536976 50%, #292E49 100%);
     background                 : -webkit-linear-gradient(0deg, #BBD2C5 0%, #536976 50%, #292E49 100%);
     background                 : linear-gradient(0deg, #BBD2C5 0%, #536976 50%, #292E49 100%);
+}
+@media screen and (max-width: 500px) {
+    .page-warp{
+        .page-right{
+            width: 102%;
+            display: flex;
+            .copyright {
+                position: fixed;
+                bottom  : 0px;
+                left    : 10vw;
+                opacity: 0.6;
+            }
+        }
+    }
 }
