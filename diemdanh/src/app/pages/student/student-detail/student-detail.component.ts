@@ -16,6 +16,7 @@ export class StudentDetailComponent {
   fileimage: FormData;
   imgAvatar: any;
   imgurl = 'http://dieuhau.top/api/images/';
+  imgId: any;
   public loading = false;
   Classes = [
     {id: 1, name: "TBN"},
@@ -177,7 +178,15 @@ export class StudentDetailComponent {
       }
     })
   }
+  // public appendImages(imagedata:any) {
+  //   for (var i = 0; i < imagedata.length; i++) {
+  //     console.log(imagedata[i]);
+  //     this.form.append('hotelgallery', new Blob([imagedata[i]], { type: "text/xml"}), imagedata[i]['originalname']);
+  //   }
+  //   console.log(this.form);
+  // }
   editItem(){
+    // this.appendImages(d)
     var formData: any = new FormData();
     formData.append('id', this.id);  
     formData.append('image', this.form.get('image')?.value);  
@@ -190,7 +199,9 @@ export class StudentDetailComponent {
     formData.append('fathername', this.form.get('fathername')?.value);  
     formData.append('godmother', this.form.get('godmother')?.value);  
     formData.append('mothername', this.form.get('mothername')?.value);  
-    formData.append('address', this.form.get('address')?.value);  
+    formData.append('address', this.form.get('address')?.value);
+      
+
     this.studentservice.update(formData).subscribe(data=>{
       if(data.success == false){
         console.log(' thêm thất bại');
@@ -202,8 +213,7 @@ export class StudentDetailComponent {
   }
   getDetailData(){
     this.studentservice.getbyid(this.id).subscribe((data:any) =>{
-      console.log('aaaaa',data.result[0]);
-      console.log('img',this.imgurl + data.result[0].image);
+      this.imgId = data.result[0].image;
       this.imgAvatar =  this.imgurl + data.result[0].image;
       this.form.setValue({
         image:'',

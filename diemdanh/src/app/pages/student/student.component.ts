@@ -60,8 +60,6 @@ export class StudentComponent  implements OnInit{
     this.router.navigate(['pages/students/detail/' + id]);
   }
   create(){
-    console.log('vào');
-    
     this.router.navigate(['pages/students/create']);
   }
   search(value: string): void {

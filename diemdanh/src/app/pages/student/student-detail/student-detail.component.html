@@ -32,7 +32,7 @@
                 <option *ngFor="let catholicw of catholicwoman" [ngValue]="catholicw.name">{{catholicw.name}}</option>
             </select>
         </div>
-        <div *ngIf="this.id" class="form-group">
+        <div  class="form-group">
             <label for="usr">Nhập tên thánh:</label>
             <input type="text" formControlName="namegod" class="form-control">
         </div>
