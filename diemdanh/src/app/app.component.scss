@@ -1,5 +1,4 @@
 :host ::ng-deep .btn{
-    font-size: 11px!important;
     font-family: "DM Sans";
     color: white;
 }
@@ -82,7 +81,7 @@
   font-size: 13px;
   }
   :host ::ng-deep .btn-control{
-    color: black!important;
+    color: white !important;
   }
   :host ::ng-deep datatable-body-cell{
     display: flex!important;

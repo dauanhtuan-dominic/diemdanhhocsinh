@@ -178,7 +178,6 @@ export class StudentDetailComponent {
     })
   }
   editItem(){
-    
     var formData: any = new FormData();
     formData.append('id', this.id);  
     formData.append('image', this.form.get('image')?.value);  
@@ -198,7 +197,6 @@ export class StudentDetailComponent {
       }else{
         this.router.navigate(['pages/students']);
         console.log('thêm thành công');
-
       }
     })
   }
