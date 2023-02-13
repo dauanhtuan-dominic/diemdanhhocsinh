@@ -56,6 +56,9 @@ export class StudentComponent  implements OnInit{
       this.getlistdatas();
     })
   }
+  getbyid(id:any){
+    this.router.navigate(['pages/students/detail/' + id]);
+  }
   create(){
     console.log('vào');
     

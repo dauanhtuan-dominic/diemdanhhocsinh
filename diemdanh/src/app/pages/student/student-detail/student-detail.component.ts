@@ -15,6 +15,7 @@ export class StudentDetailComponent {
   public id: any;
   fileimage: FormData;
   imgAvatar: any;
+  imgurl = 'http://dieuhau.top/api/images/';
   public loading = false;
   Classes = [
     {id: 1, name: "TBN"},
@@ -108,21 +109,25 @@ export class StudentDetailComponent {
   }
   ngOnInit(): void {
         this.addForm();
-        
+        this.route.params.subscribe((params:any)=>{
+          if(params.id !== undefined){
+            this.id = params.id;
+            this.getDetailData();
+          }
+        })
   }
   addForm() {
     this.form = this.fb.group({
       image: [''],
       namegod: [''],
       fullname: [''],
-      Classes: [''],
+      class: [''],
       groupgod: [''],
       birthday: [''],
       godfather: [''],
       fathername: [''],
       godmother: [''],
       mothername: [''],
-      parent: [''],
       address: ['']
     });
   }
@@ -150,7 +155,7 @@ export class StudentDetailComponent {
     formData.append('image', this.form.get('image')?.value);  
     formData.append('namegod', this.form.get('namegod')?.value);  
     formData.append('fullname', this.form.get('fullname')?.value);  
-    formData.append('class', this.form.get('Classes')?.value);  
+    formData.append('class', this.form.get('class')?.value);  
     formData.append('groupgod', this.form.get('groupgod')?.value);  
     formData.append('birthday', this.form.get('birthday')?.value);  
     formData.append('godfather', this.form.get('godfather')?.value);  
@@ -172,6 +177,54 @@ export class StudentDetailComponent {
       }
     })
   }
+  editItem(){
+    
+    var formData: any = new FormData();
+    formData.append('id', this.id);  
+    formData.append('image', this.form.get('image')?.value);  
+    formData.append('namegod', this.form.get('namegod')?.value);  
+    formData.append('fullname', this.form.get('fullname')?.value);  
+    formData.append('class', this.form.get('class')?.value);  
+    formData.append('groupgod', this.form.get('groupgod')?.value);  
+    formData.append('birthday', this.form.get('birthday')?.value);  
+    formData.append('godfather', this.form.get('godfather')?.value);  
+    formData.append('fathername', this.form.get('fathername')?.value);  
+    formData.append('godmother', this.form.get('godmother')?.value);  
+    formData.append('mothername', this.form.get('mothername')?.value);  
+    formData.append('address', this.form.get('address')?.value);  
+    this.studentservice.update(formData).subscribe(data=>{
+      if(data.success == false){
+        console.log(' thêm thất bại');
+      }else{
+        this.router.navigate(['pages/students']);
+        console.log('thêm thành công');
+
+      }
+    })
+  }
+  getDetailData(){
+    this.studentservice.getbyid(this.id).subscribe((data:any) =>{
+      console.log('aaaaa',data.result[0]);
+      console.log('img',this.imgurl + data.result[0].image);
+      this.imgAvatar =  this.imgurl + data.result[0].image;
+      this.form.setValue({
+        image:'',
+        namegod: data.result[0].namegod,
+        fullname: data.result[0].fullname,
+        class: data.result[0].class,
+        groupgod: data.result[0].groupgod,
+        birthday: data.result[0].birthday,
+        godfather: data.result[0].godfather,
+        fathername: data.result[0].fathername,
+        godmother: data.result[0].godmother,
+        mothername: data.result[0].mothername,
+        address: data.result[0].address,
+
+      });
+      
+    })
+  }
+ 
   cancel() {
     this.router.navigate(['pages/students']);
   }

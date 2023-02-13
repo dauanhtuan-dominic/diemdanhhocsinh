@@ -10,7 +10,7 @@
             <img style=" padding-top: 22px;width: 15%;" src="{{imgAvatar}}" />
         </div>
 
-        <a style="color:red;font-size: 15px;">*Vui lòng chỉ chọn đúng 1 Tên thánh Nam Hoặc Nữ</a>
+        <a style="color:red;font-size: 15px;">*Vui lòng chỉ chọn đúng 1 Tên thánh Nam Hoặc Nữ.</a>
         <div class="form-group">
             <label for="usr">Tên thánh Nam:</label>
             <select style="height: 35px;
@@ -54,7 +54,7 @@
             <select style="height: 35px;
             width: 100%;
             padding-left: 16px;
-            font-size: 19px;" formControlName="Classes">
+            font-size: 19px;" formControlName="class">
                 <option [ngValue]="null" disabled>Chọn lớp học</option>
                 <option *ngFor="let class of Classes" [ngValue]="class.name">{{class.name}}</option>
             </select>
@@ -101,9 +101,11 @@
 
 <div class="modal-footer">
     <button type="button" class="btn-cancel" (click)="cancel()">Hủy</button>
-    <button *ngIf="!loading" type="button" class="btn btn-primary btn-control" [disabled]="!form.valid"
+    <button *ngIf="!this.id" type="button" class="btn btn-primary btn-control" [disabled]="!form.valid"
         (click)="createItem()">Thêm</button>
+    <button *ngIf="this.id" type="button" class="btn btn-primary btn-control" [disabled]="!form.valid"
+        (click)="editItem()">Lưu</button>
 </div>
-<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
-    <p style="color: white">Đang tải...</p>  
-    </ngx-spinner>   
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+    <p style="color: white">Đang tải...</p>
+</ngx-spinner>

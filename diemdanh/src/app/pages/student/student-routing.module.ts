@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path:'create',
     component: StudentDetailComponent
+  },
+  {
+    path:'detail/:id',
+    component: StudentDetailComponent
   }
 ]
 @NgModule({
