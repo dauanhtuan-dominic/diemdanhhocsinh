@@ -5,32 +5,32 @@
 <div class="modal-body">
     <form [formGroup]="form">
         <div class="form-group">
-            <label for="usr">Hình ảnh học viên:</label> <br/>
+            <label for="usr">Hình ảnh học viên:</label> <br />
             <input type="file" (change)="uploadFile($event)">
-            <img style=" padding-top: 22px;width: 15%;" src="{{imgAvatar}}"/>
+            <img style=" padding-top: 22px;width: 15%;" src="{{imgAvatar}}" />
         </div>
 
         <a style="color:red;font-size: 15px;">*Vui lòng chỉ chọn đúng 1 Tên thánh Nam Hoặc Nữ</a>
         <div class="form-group">
             <label for="usr">Tên thánh Nam:</label>
-            <select  style="height: 35px;
+            <select style="height: 35px;
             width: 100%; 
             padding-left: 16px;
             font-size: 19px;" formControlName="namegod">
                 <option [ngValue]="null" disabled>Chọn tên thánh</option>
                 <option *ngFor="let catholicm of catholicmans" [ngValue]="catholicm.name">{{catholicm.name}}</option>
-            </select>    
+            </select>
         </div>
 
         <div class="form-group">
             <label for="usr">Tên thánh Nữ:</label>
-            <select  style="height: 35px;
+            <select style="height: 35px;
             width: 100%; 
             padding-left: 16px;
             font-size: 19px;" formControlName="namegod">
                 <option [ngValue]="null" disabled>Chọn tên thánh</option>
                 <option *ngFor="let catholicw of catholicwoman" [ngValue]="catholicw.name">{{catholicw.name}}</option>
-            </select>    
+            </select>
         </div>
         <div class="form-group">
             <label for="usr">Nhập tên thánh:</label>
@@ -46,29 +46,29 @@
             <input style="height: 35px;
             width: 40%;
             padding-left: 16px;
-            font-size: 19px;" formControlName="birthday" type="date" >
+            font-size: 19px;" formControlName="birthday" type="date">
         </div>
 
         <div class="form-group">
             <label for="usr">Lớp học:</label>
-            <select  style="height: 35px;
+            <select style="height: 35px;
             width: 100%;
             padding-left: 16px;
             font-size: 19px;" formControlName="Classes">
                 <option [ngValue]="null" disabled>Chọn lớp học</option>
                 <option *ngFor="let class of Classes" [ngValue]="class.name">{{class.name}}</option>
-            </select>        
+            </select>
         </div>
 
         <div class="form-group">
             <label for="usr">Giáo xóm:</label>
-            <select  style="height: 35px;
+            <select style="height: 35px;
             width: 100%; 
             padding-left: 16px;
             font-size: 19px;" formControlName="groupgod">
                 <option [ngValue]="null" disabled>Chọn giáo xóm</option>
                 <option *ngFor="let groupgo of groupgod" [ngValue]="groupgo.name">{{groupgo.name}}</option>
-            </select>        
+            </select>
         </div>
 
         <div class="form-group">
@@ -76,12 +76,12 @@
             <input type="text" formControlName="godfather" class="form-control">
         </div>
 
-        
+
         <div class="form-group">
             <label for="usr">Họ tên Cha:</label>
             <input type="text" formControlName="fathername" class="form-control">
         </div>
-        
+
         <div class="form-group">
             <label for="usr">Tên thánh Mẹ:</label>
             <input type="text" formControlName="godmother" class="form-control">
@@ -98,8 +98,12 @@
         </div>
     </form>
 </div>
+
 <div class="modal-footer">
     <button type="button" class="btn-cancel" (click)="cancel()">Hủy</button>
-    <button *ngIf="!this.id" type="button" class="btn btn-primary btn-control" [disabled]="!form.valid"
+    <button *ngIf="!loading" type="button" class="btn btn-primary btn-control" [disabled]="!form.valid"
         (click)="createItem()">Thêm</button>
 </div>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Đang tải...</p>  
+    </ngx-spinner>   

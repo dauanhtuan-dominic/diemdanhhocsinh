@@ -4,6 +4,7 @@ import { NgSelectConfig } from '@ng-select/ng-select';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StudentService } from 'src/app/@web-core/http';
 import { DatePipe } from '@angular/common';
+import { NgxSpinnerService } from "ngx-spinner";  
 @Component({
   selector: 'app-student-detail',
   templateUrl: './student-detail.component.html',
@@ -14,6 +15,7 @@ export class StudentDetailComponent {
   public id: any;
   fileimage: FormData;
   imgAvatar: any;
+  public loading = false;
   Classes = [
     {id: 1, name: "TBN"},
     {id: 2, name: "XT1"},
@@ -100,6 +102,7 @@ export class StudentDetailComponent {
     private config: NgSelectConfig,
     private router: Router,
     private route: ActivatedRoute,
+    private SpinnerService: NgxSpinnerService
   ) {
     this.config.notFoundText = 'Không có dữ liệu';
   }
@@ -140,6 +143,9 @@ export class StudentDetailComponent {
     this.form.get('image')?.updateValueAndValidity();
   }
   createItem() {
+    this.SpinnerService.show();
+    console.log('vào', this.SpinnerService.show());
+    
     var formData: any = new FormData();
     formData.append('image', this.form.get('image')?.value);  
     formData.append('namegod', this.form.get('namegod')?.value);  
@@ -157,9 +163,12 @@ export class StudentDetailComponent {
     this.studentservice.create(formData).subscribe(data=>{
       if(data.success == false){
         console.log(' thêm thất bại');
+        this.SpinnerService.hide();
       }else{
         this.router.navigate(['pages/students']);
         console.log('thêm thành công');
+        this.SpinnerService.hide();
+
       }
     })
   }

@@ -12,7 +12,7 @@ import { NgxCurrencyModule } from "ngx-currency";
 import { StudentService } from 'src/app/@web-core/http';
 import { CoreModule } from 'src/app/@web-core';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
+import { NgxSpinnerModule } from "ngx-spinner"; 
 @NgModule({
     declarations: [StudentComponent, StudentDetailComponent],
     imports: [
@@ -29,6 +29,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
       ReactiveFormsModule,
       Ng2SearchPipeModule,
       DatePipe,
+      NgxSpinnerModule
     ]
   })
   export class StudentModule { }
