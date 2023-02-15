@@ -7,7 +7,7 @@
         <div class="form-group">
             <label for="usr">Hình ảnh học viên:</label> <br />
             <input type="file" (change)="uploadFile($event)">
-            <img style=" padding-top: 22px;width: 15%;" src="{{imgAvatar}}" />
+            <img style=" padding-top: 22px;width: 15%;" [src]="imgAvatar" />
         </div>
 
         <a *ngIf="!this.id" style="color:red;font-size: 15px;">*Vui lòng chỉ chọn đúng 1 Tên thánh Nam Hoặc Nữ.</a>

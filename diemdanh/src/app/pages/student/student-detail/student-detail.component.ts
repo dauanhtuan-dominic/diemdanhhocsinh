@@ -15,7 +15,7 @@ export class StudentDetailComponent {
   public id: any;
   fileimage: FormData;
   imgAvatar: any;
-  imgurl = 'http://dieuhau.top/api/images/';
+  imgurl = 'https://dieuhau.top/api/images/';
   imgId: any;
   public loading = false;
   Classes = [
@@ -150,8 +150,6 @@ export class StudentDetailComponent {
   }
   createItem() {
     this.SpinnerService.show();
-    console.log('vào', this.SpinnerService.show());
-    
     var formData: any = new FormData();
     formData.append('image', this.form.get('image')?.value);  
     formData.append('namegod', this.form.get('namegod')?.value);  
@@ -164,7 +162,6 @@ export class StudentDetailComponent {
     formData.append('godmother', this.form.get('godmother')?.value);  
     formData.append('mothername', this.form.get('mothername')?.value);  
     formData.append('address', this.form.get('address')?.value);  
-    console.log('form',formData);
     
     this.studentservice.create(formData).subscribe(data=>{
       if(data.success == false){
@@ -178,18 +175,12 @@ export class StudentDetailComponent {
       }
     })
   }
-  // public appendImages(imagedata:any) {
-  //   for (var i = 0; i < imagedata.length; i++) {
-  //     console.log(imagedata[i]);
-  //     this.form.append('hotelgallery', new Blob([imagedata[i]], { type: "text/xml"}), imagedata[i]['originalname']);
-  //   }
-  //   console.log(this.form);
-  // }
+  // new Blob([this.form.get('image')?.value], { type: "text/xml"}), this.form.get('image')?.value['originalname']
   editItem(){
-    // this.appendImages(d)
+
     var formData: any = new FormData();
     formData.append('id', this.id);  
-    formData.append('image', this.form.get('image')?.value);  
+    formData.append('image', new Blob([this.form.get('image')?.value], { type: "text/xml"}), this.form.get('image')?.value['originalname']);  
     formData.append('namegod', this.form.get('namegod')?.value);  
     formData.append('fullname', this.form.get('fullname')?.value);  
     formData.append('class', this.form.get('class')?.value);  
@@ -211,12 +202,19 @@ export class StudentDetailComponent {
       }
     })
   }
+  refresh(): void {
+    window.location.reload();
+}
   getDetailData(){
     this.studentservice.getbyid(this.id).subscribe((data:any) =>{
-      this.imgId = data.result[0].image;
+
+      console.log('data.result[0].image',data.result[0].image);
+      
       this.imgAvatar =  this.imgurl + data.result[0].image;
+      console.log('this.imgAvatar',this.imgAvatar);
+      
       this.form.setValue({
-        image:'',
+        image:this.imgurl + data.result[0].image,
         namegod: data.result[0].namegod,
         fullname: data.result[0].fullname,
         class: data.result[0].class,
@@ -227,7 +225,6 @@ export class StudentDetailComponent {
         godmother: data.result[0].godmother,
         mothername: data.result[0].mothername,
         address: data.result[0].address,
-
       });
       
     })
