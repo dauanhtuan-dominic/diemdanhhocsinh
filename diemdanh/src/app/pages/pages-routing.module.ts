@@ -13,6 +13,16 @@ const routes: Routes = [
         loadChildren: () => import('./student/student.module')
           .then(m => m.StudentModule),
       },
+      {
+        path: 'registers',
+        loadChildren: () => import('./gettimestudent/gettimestudent.module')
+          .then(m => m.GettimestudentModule),
+      },
+      {
+        path: 'scores',
+        loadChildren: () => import('./scores/scores-routing.module')
+          .then(m => m.ScroreRoutingModule),
+      },
     ]
   }
   

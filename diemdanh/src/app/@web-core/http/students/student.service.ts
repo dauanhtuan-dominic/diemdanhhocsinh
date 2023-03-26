@@ -45,4 +45,11 @@ export class StudentService {
       throw erros.error;
     }))
   }
+  public gettime() {
+    return this.http.get(`${APICONFIG.STUDENTS.GETTIME}`).pipe(
+      map((result) => {
+        return result;
+      }),
+      catchError((error) => { throw error.error }));
+  }
 }

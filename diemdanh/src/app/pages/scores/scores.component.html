@@ -1,0 +1,40 @@
+    <table>
+        <tr>
+            <th>STT</th>
+            <th>Tên thánh</th>
+            <th>Họ tên</th>
+            <th>Lớp</th>
+            <th>Điểm miệng</th>
+            <th>Điểm 15p</th>
+            <th>Điểm 45p</th>
+            <th>Điểm thi học kì</th>
+            <th>Điểm chuyên cần</th>
+            <th>Hành động</th>
+        </tr>
+        <tr *ngFor ="let data of tableData; index as i " >
+            <td>{{i+1}}</td>
+            <td>{{data.namegod}}</td>
+            <td>{{data.fullname}}</td>
+            <td>{{data.class}}</td>
+            <td>
+                <input type="number" style="width:97px; height:36px;">
+            </td>
+            <td>
+                <input type="number" style="width:97px; height:36px;">
+            </td>
+            <td>
+                <input type="number" style="width:97px; height:36px;">
+            </td>
+            <td>
+                <input type="number"style="width:97px; height:36px;">
+            </td>
+            <td>
+                <input type="number" disabled style="width:97px; height:36px;">
+            </td>
+            <td>
+                <div>
+                    <button style="background-color: green;color: white;border: 1px;border-radius: 4px;font-size: 17px;padding: 2px 15px;">Lưu</button>
+                </div>
+            </td>
+        </tr>
+      </table>

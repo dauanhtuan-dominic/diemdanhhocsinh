@@ -1,0 +1,31 @@
+<div style="margin: 30px">
+    <form class="wrap">
+      <div class="search">
+        <input class="searchTerm" type="text" name="searchTerm" 
+          placeholder="Tìm kiếm học sinh"
+          [(ngModel)]="searchTerm" (input)="search(searchTerm)" />
+      </div>
+    </form>
+      <table>
+        <tr>
+            <th>STT</th>
+            <th>Tên thánh</th>
+            <th>Họ và tên</th>
+            <th>Ngày sinh</th>
+            <th>Lớp</th>
+            <th>Có mặt</th>
+            <th>Vắng mặt</th>
+            <th>Thời gian điểm danh</th>
+          </tr>
+        <tr *ngFor ="let data of dataUser; index as i " >
+          <td>{{i+1}}</td>
+          <td>{{data.namegod}}</td>
+          <td>{{data.fullname}}</td>
+          <td>{{data.birthday | date: 'dd/MM/yyyy'}}</td>
+          <td>{{data.class}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>

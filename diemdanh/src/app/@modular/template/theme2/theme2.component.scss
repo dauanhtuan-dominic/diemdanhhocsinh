@@ -15,14 +15,13 @@
         right: 0px;
         position: absolute;
         transition: width 0.3s;
-        width: 87%;
+        width: 85%;
 
         .content {
             width: 90%;
             background-color: thistle;
             margin          : 140px 40px 40px 40px;
             background-clip : border-box;
-            border          : 1px solid rgba(0, 0, 0, .125);
             border-radius   : 5px;
             background-color: #fff;
         }

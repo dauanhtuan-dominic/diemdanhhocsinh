@@ -1,7 +1,17 @@
 export let MENU_ITEM = [
     {
         path: 'students',
-        title: 'Quản lý học viên',
+        title: 'Quản lý giáo sinh',
+        icon: 'address-book'
+    },
+    {
+        path: 'registers',
+        title: 'Quản lý điểm danh giáo sinh',
+        icon: 'address-book'
+    },
+    {
+        path: 'scores',
+        title: 'Quản lý Điểm ',
         icon: 'address-book'
     },
     // {
